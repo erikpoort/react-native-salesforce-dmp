@@ -1,0 +1,33 @@
+{
+  "name": "react-native-salesforce-dmp",
+  "version": "1.0.0",
+  "description": "Salesforce DMP ReactNative module.",
+  "files": ["src", "ios", "android"],
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erikpoort/react-native-salesforce-dmp.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "native",
+    "salesforce",
+    "krux"
+  ],
+  "author": "Erik Poort",
+  "license": "GNU General Public License v3.0",
+  "bugs": {
+    "url": "https://github.com/erikpoort/react-native-salesforce-dmp/issues"
+  },
+  "homepage": "https://github.com/erikpoort/react-native-salesforce-dmp#readme",
+  "dependencies": {
+  },
+  "peerDependencies": {
+    "react": ">=16.0.0-alpha.6",
+    "react-native": ">=0.46.0"
+  }
+}
