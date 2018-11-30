@@ -22,7 +22,17 @@ function trackPageView(section, pageAttributes, userAttributes) {
   RNSalesforceDMPModule.trackPageView(index);
 }
 
+/**
+* Fire an event
+* @param {string} event Event name
+* @param {Object.<string, string>} attributes An object with event attributes
+*/
+function fireEvent(event, attributes) {
+  RNSalesforceDMPModule.fireEvent(index, attributes);
+}
+
 module.exports = {
   setupTracker,
   trackPageView,
+  fireEvent,
 }
