@@ -11,4 +11,6 @@
 @implementation RNSalesforceDMPModule {
 }
 
+RCT_EXPORT_MODULE();
+
 @end
