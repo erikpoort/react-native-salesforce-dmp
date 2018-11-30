@@ -33,6 +33,6 @@ repositories {
 }
 
 dependencies {
-    compile 'com.facebook.react:react-native:+'
-    compile('krux-java-android-sdk-4.4.0', ext: 'aar')
+    implementation 'com.facebook.react:react-native:+'
+    compile fileTree(dir: 'aar', include: ['*.aar'])
 }
