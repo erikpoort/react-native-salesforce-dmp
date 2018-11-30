@@ -15,10 +15,8 @@ function setupTracker(configId, debugFlag) {
 /**
 * Track page view
 * @param {string} section Section name
-* @param {Object.<string, string>} pageAttributes An object with page
-*     attributes
-* @param {Object.<string, string>} userAttributes An object with user
-*     attributes
+* @param {Object.<string, string>} pageAttributes An object with page attributes
+* @param {Object.<string, string>} userAttributes An object with user attributes
 */
 function trackPageView(section, pageAttributes, userAttributes) {
   RNSalesforceDMPModule.trackPageView(index);
