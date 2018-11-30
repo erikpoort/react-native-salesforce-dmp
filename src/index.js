@@ -31,8 +31,17 @@ function fireEvent(event, attributes) {
   RNSalesforceDMPModule.fireEvent(index, attributes);
 }
 
+/**
+* Track a transaction
+* @param {Object.<string, string>} attributes An object with transaction attributes
+*/
+function trackTransaction(attributes) {
+  RNSalesforceDMPModule.trackTransaction(index, attributes);
+}
+
 module.exports = {
   setupTracker,
   trackPageView,
   fireEvent,
+  trackTransaction,
 }
