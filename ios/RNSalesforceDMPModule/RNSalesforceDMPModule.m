@@ -63,11 +63,10 @@ RCT_EXPORT_METHOD(
 
     if (!userAttributes || userAttributes.count == 0) {
         [_kruxTracker trackPageView:name attributes:pageAttributes];
-        resolve(@YES);
     } else {
         [_kruxTracker trackPageView:name pageAttributes:pageAttributes userAttributes:userAttributes];
-        resolve(@YES);
     }
+    resolve(@YES);
 }
 
 #pragma mark - Events
