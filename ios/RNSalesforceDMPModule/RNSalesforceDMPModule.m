@@ -34,7 +34,7 @@ RCT_EXPORT_METHOD(
         return;
     }
     
-    _kruxTracker = [KruxTracker sharedEventTrackerWithConfigId:configId debugFlag:debugFlag dryRunFlag:true consentCallback:nil];
+    _kruxTracker = [KruxTracker sharedEventTrackerWithConfigId:configId debugFlag:debugFlag dryRunFlag:false consentCallback:nil];
     
     if (_kruxTracker) {
         resolve(@YES);
