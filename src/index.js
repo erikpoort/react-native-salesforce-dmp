@@ -9,7 +9,7 @@ const { RNSalesforceDMPModule } = NativeModules;
 *     your app.
 */
 function setupTracker(configId, debugFlag) {
-  RNSalesforceDMPModule.setupTracker(configId, debugFlag);
+  return RNSalesforceDMPModule.setupTracker(configId, debugFlag = false);
 }
 
 /**
@@ -18,8 +18,8 @@ function setupTracker(configId, debugFlag) {
 * @param {Object.<string, string>} pageAttributes An object with page attributes
 * @param {Object.<string, string>} userAttributes An object with user attributes
 */
-function trackPageView(section, pageAttributes, userAttributes) {
-  RNSalesforceDMPModule.trackPageView(index);
+function trackPageView(section, pageAttributes = {}, userAttributes = {}) {
+  return RNSalesforceDMPModule.trackPageView(section, pageAttributes, userAttributes);
 }
 
 /**
@@ -27,16 +27,16 @@ function trackPageView(section, pageAttributes, userAttributes) {
 * @param {string} event Event name
 * @param {Object.<string, string>} attributes An object with event attributes
 */
-function fireEvent(event, attributes) {
-  RNSalesforceDMPModule.fireEvent(index, attributes);
+function fireEvent(event, attributes = {}) {
+  return RNSalesforceDMPModule.fireEvent(event, attributes);
 }
 
 /**
 * Track a transaction
 * @param {Object.<string, string>} attributes An object with transaction attributes
 */
-function trackTransaction(attributes) {
-  RNSalesforceDMPModule.trackTransaction(index, attributes);
+function trackTransaction(attributes = {}) {
+  return RNSalesforceDMPModule.trackTransaction(attributes);
 }
 
 module.exports = {
