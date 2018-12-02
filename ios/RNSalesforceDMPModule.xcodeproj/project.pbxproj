@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03D42C3A21B4640100598941 /* iOSKruxLibUniversal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03D42C3921B4640000598941 /* iOSKruxLibUniversal.framework */; };
 		2FA286D829AAF3D99D291B23 /* RNSalesforceDMPModule.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2FA2864B826924452CA186D5 /* RNSalesforceDMPModule.h */; };
 		2FA287CCA6B527EF0F4AD3C0 /* RNSalesforceDMPModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FA283B5C85892C044816F6D /* RNSalesforceDMPModule.m */; };
 /* End PBXBuildFile section */
@@ -25,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		03D42C3921B4640000598941 /* iOSKruxLibUniversal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iOSKruxLibUniversal.framework; path = "/Users/erik/Documents/Projects/MediaMonks/AeroMexico/AeroMexicoApp/Git/ReactNative/node_modules/react-native-salesforce-dmp/ios/Frameworks/iOSKruxLibUniversal.framework"; sourceTree = "<absolute>"; };
 		2FA283B5C85892C044816F6D /* RNSalesforceDMPModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNSalesforceDMPModule.m; sourceTree = "<group>"; };
 		2FA2864B826924452CA186D5 /* RNSalesforceDMPModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNSalesforceDMPModule.h; sourceTree = "<group>"; };
 		2FA28B0AFA2D1262EF148E63 /* libRNSalesforceDMPModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNSalesforceDMPModule.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,17 +37,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03D42C3A21B4640100598941 /* iOSKruxLibUniversal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03D42C3821B4640000598941 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				03D42C3921B4640000598941 /* iOSKruxLibUniversal.framework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 		2FA2831CA4E414FFA447F530 = {
 			isa = PBXGroup;
 			children = (
 				2FA286DD12F52D7EF1E77141 /* Products */,
 				2FA28899B646966C0F0A8919 /* RNSalesforceDMPModule */,
+				03D42C3821B4640000598941 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,7 +75,6 @@
 				2FA2864B826924452CA186D5 /* RNSalesforceDMPModule.h */,
 				2FA283B5C85892C044816F6D /* RNSalesforceDMPModule.m */,
 			);
-			name = RNSalesforceDMPModule;
 			path = RNSalesforceDMPModule;
 			sourceTree = "<group>";
 		};
@@ -77,6 +88,7 @@
 				2FA28E5C8BF213BB670FC7E7 /* Sources */,
 				2FA28579FDA084C766DE20EB /* Frameworks */,
 				2FA28CB7F279C2FB36A02E3F /* CopyFiles */,
+				03D42B9C21B460DA00598941 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -111,6 +123,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		03D42B9C21B460DA00598941 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2FA28E5C8BF213BB670FC7E7 /* Sources */ = {
@@ -165,17 +187,22 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../ios/Pods/Headers/**";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../ios/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "i386 armv7 x86_64 arm64";
 			};
 			name = Debug;
 		};
 		2FA280AF117ECD25DD36E3E5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -217,17 +244,22 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../ios/Pods/Headers/**";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../../ios/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "i386 armv7 x86_64 arm64";
 			};
 			name = Release;
 		};
 		2FA28844D736628803766601 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
