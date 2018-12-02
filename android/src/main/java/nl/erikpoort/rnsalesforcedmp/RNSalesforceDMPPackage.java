@@ -1,5 +1,7 @@
 package nl.erikpoort.rnsalesforcedmp;
 
+import android.app.Application;
+
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;
@@ -16,10 +18,17 @@ import java.util.List;
  */
 
 public class RNSalesforceDMPPackage implements ReactPackage {
+    private final Application _application;
+
+    public RNSalesforceDMPPackage(Application application) {
+        super();
+        _application = application;
+    }
+
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
-        modules.add(new RNSalesforceDMPModule(reactContext));
+        modules.add(new RNSalesforceDMPModule(reactContext, _application));
         return modules;
     }
 
