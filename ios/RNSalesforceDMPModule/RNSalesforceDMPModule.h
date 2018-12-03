@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <iOSKruxLibUniversal/KruxTracker.h>
 #import <React/RCTBridgeModule.h>
 #import <React/RCTUtils.h>
 
-@interface RNSalesforceDMPModule : NSObject <RCTBridgeModule>
+@interface RNSalesforceDMPModule : NSObject <RCTBridgeModule, KruxConsentCallback>
 
 @end
