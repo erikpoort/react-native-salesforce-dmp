@@ -1,42 +1,6 @@
-# react-native-salesforce-dmp
-ReactNative module for Salesforce DMP 4.0.+ (KRUX)
+import { NativeModules } from 'react-native';
+const { RNSalesforceDMPModule } = NativeModules;
 
-## Installation
-
-```bash
-npm install --save react-native-salesforce-dmp
-```
-```bash
-react-native link react-native-salesforce-dmp
-```
-
-### iOS
-The krux library is embedded in this plugin, but make sure to check the official setup for extra information:
-[here](https://konsole.zendesk.com/hc/en-us/articles/219986988-iOS-SDK-Implementation-Guide)   
-Part of that setup is adding the following dependent frameworks to use the Salesforce DMP framework:
-SystemConfiguration.framework
-AdSupport.framework
-
-### Android
-The krux library is embedded in this plugin, but make sure to check the official setup for extra information:
-[here](https://konsole.zendesk.com/hc/en-us/articles/226031268-Android-SDK-Implementation-Guide)   
-Part of that setup is adding the following to the manifest:
-```xml
-<uses-permission android:name="android.permission.INTERNET"/>
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-<service android:name="com.krux.androidsdk.aggregator.EventPublisherService" android:enabled="true" />
-<service android:name="com.krux.androidsdk.aggregator.ConsentService" android:enabled="true" /> 
-```
-
-## Usage
-```js
-// Import
-import SalesforceDMP from 'react-native-salesforce-dmp';
-```
-
-Implemented calls:
-```js
 /**
  * Setup tracker
  * @param {string} configId Configuration Id
@@ -122,4 +86,15 @@ function consumerRemoveRequest(attributes) {
 function consumerPortabilityRequest(attributes) {
   RNSalesforceDMPModule.consumerPortabilityRequest(attributes);
 }
-```
+
+module.exports = {
+  setupTracker,
+  getSegments,
+  trackPageView,
+  fireEvent,
+  trackTransaction,
+  consentSetRequest,
+  consentGetRequest,
+  consumerRemoveRequest,
+  consumerPortabilityRequest,
+}
